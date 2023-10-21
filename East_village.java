@@ -1,6 +1,14 @@
-import java.util.concurrent.*;
+import java.util.concurrent.Semaphore;
 
 public class East_village {
-   // Your code here
+
+   private void eatDonut(){
+      try{
+      Thread.sleep((long)(Math.random() *1000));
+
+   } catch(InterruptedException e){
+      e.printStackTrace();
+   }
+   }
 
 }
