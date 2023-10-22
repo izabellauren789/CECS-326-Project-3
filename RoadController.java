@@ -6,7 +6,6 @@ import java.util.concurrent.Semaphore;
 import java.util.Random;
 
 public class RoadController {
-   // Your code here
    private Semaphore semaphore;
 
    public RoadController() {
