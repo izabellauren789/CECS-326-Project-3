@@ -9,9 +9,10 @@ public class RoadController {
    private Semaphore semaphore;
 
    public RoadController() {
-      semaphore = new Semaphore(1);
+      semaphore = new Semaphore(1); // only allows for one villager to enter the road at a time
    }
 
+   /* Actions available for villagers to do while traveling the road */
    public enum VillagerAction {
       DRINK_WINE,
       EAT_DONUT,
@@ -23,7 +24,8 @@ public class RoadController {
    public void useRoad(String villageName) {
       try {
          System.out.println(villageName + " has arrived at the road.");
-         semaphore.acquire();
+         semaphore.acquire(); // allows access to semaphore
+         /* performs random action while traveling road */
          VillagerAction randomAction = getRandomAction();
          switch (randomAction) {
             case DRINK_WINE:
@@ -49,9 +51,10 @@ public class RoadController {
 
    public void releaseRoad(String villageName) {
       System.out.println(villageName + " has finished the exchange.");
-      semaphore.release();
+      semaphore.release(); // releases from semaphore, allows for another thread to access
    }
 
+   /* generated random action from list of actions */
    private VillagerAction getRandomAction() {
       Random random = new Random();
       return VillagerAction.values()[random.nextInt(VillagerAction.values().length)];
