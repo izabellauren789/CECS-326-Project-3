@@ -15,10 +15,12 @@ public class East_village implements Runnable {
    public void run() {
       try {
          Thread.sleep(new Random().nextInt(1000));
-
+         // System.out.println(name + " is arriving at the road.");
          road.useRoad(name);
+         // System.out.println(name + " has crossed the road.");
          Thread.sleep(new Random().nextInt(1000));
          road.releaseRoad(name);
+         // System.out.println(name + " has finished the exchange.");
       } catch (InterruptedException e) {
          Thread.currentThread().interrupt();
       }
