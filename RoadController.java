@@ -41,7 +41,6 @@ public class RoadController {
             case CRY:
                System.out.println(villageName + " is crying while traveling the road.");
                break;
-
          }
       } catch (InterruptedException e) {
          Thread.currentThread().interrupt();
